@@ -1,0 +1,171 @@
+body {
+  overflow: hidden;
+}
+.tools {
+  font-size: 18px;
+  position: absolute;
+  overflow: hidden;
+  bottom: 0px;
+  width: 100%;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.05);
+
+  transition-property: opacity;
+  transition-delay: 0.2s;
+  transition-duration: 0.3s;
+  opacity: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 45%;
+  }
+  .scheme {
+    select {
+      width: 96px;
+      height: 40px;
+      font-size: 18px;
+      background-color: transparent;
+    }
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    border-radius: 24px;
+    border: 1px solid #37474f;
+    background-color: transparent;
+  }
+  .mode button {
+    width: 64px;
+  }
+  .theme button {
+    width: 64px;
+  }
+  .clear {
+    width: 72px;
+  }
+  .digit-tool {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    button {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  .digits {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    .digit-inner {
+      display: flex;
+      align-items: center;
+    }
+    .digit {
+      width: 48px;
+      font-size: 24px;
+      font-family: DIN;
+    }
+    button {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+.dark {
+  color: aliceblue;
+  .scheme select {
+    color: aliceblue;
+  }
+  .scheme select option {
+    color: aliceblue;
+    background: black;
+  }
+  button {
+    color: aliceblue;
+    border-color: aliceblue;
+  }
+}
+.hide {
+  opacity: 0;
+}
+
+@media screen and (max-width: 960px) {
+  .tools {
+    height: 40%;
+    font-size: 24px;
+    display: block;
+    .btns {
+      width: 100%;
+      flex-wrap: wrap;
+      button {
+        width: 100%;
+        height: 48px;
+        font-size: 24px;
+      }
+      .mode {
+        margin-top: 2vh;
+        width: 20%;
+        height: 7.2vh;
+      }
+      .theme {
+        width: 20%;
+      }
+      .clear {
+        width: 20%;
+      }
+    }
+    .digit-tool {
+      display: flex;
+      width: 100%;
+      align-items: center;
+    }
+    .digits {
+      width: 85%;
+      flex-wrap: wrap;
+      .digit-span {
+        width: 40%;
+        height: 10vh;
+        text-align: center;
+        .digit-inner {
+          position: relative;;
+          margin: 0 auto;
+          width: 100%;
+        }
+      }
+      .digit {
+        width: 48px;
+        font-size: 24px;
+        font-family: DIN;
+      }
+      button {
+        width: 6vh;
+        height: 6vh;
+      }
+    }
+    .scheme {
+      width: 100%;
+      height: 10vh;
+      align-items: center;
+      display: flex;
+      justify-content: space-evenly;
+      select {
+        font-size: 24px;
+        width: 40%;
+        background-color: transparent;
+      }
+    }
+  }
+}

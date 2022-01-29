@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applied Generative Design</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+
+  <!-- this is the main p5 library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+
+  <!-- this is the p5 sound library -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.js"></script> -->
+
+  <!-- this is the p5 DOM library -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.dom.js"></script> -->
+
+  <!--
+		 Note: if you have no access to the internet, the cdnjs.cloudflare.com links
+		 above (and therefore your sketch) won't work.
+
+		 If you want to be able to work offline, you will need to download the p5
+		 libraries (e.g. from https://p5js.org/download/ and place them in a `lib`
+		 folder in this project. Then, you can remove the <script> tags above and replace
+		 them with the (currently commented-out) ones below:
+
+		 <script src="lib/p5/p5.js"></script>
+		 <script src="lib/p5/addons/p5.dom.js"></script>
+		 <script src="lib/p5/addons/p5.sound.js"></script>
+		 -->
+
+  <!-- here's where we include the actual sketch file -->
+  <link rel="stylesheet/less" type="text/css" href="assets/styles.less" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js"></script>
+  <script src="utils.js"></script>
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+  <div class="tools">
+    <span class="btns">
+      <span class="scheme">
+        <span>Color Scheme: </span>
+        <select name="color-scheme" id="scheme-sel" onchange="selectColorScheme(this.value)">
+          <option value="red">Red</option>
+          <option value="pink">Pink</option>
+          <option value="purple">Purple</option>
+          <option value="skyblue">Skyblue</option>
+          <option value="cyan">Cyan</option>
+          <option value="teal">Teal</option>
+          <option value="green" selected>Green</option>
+          <option value="lime">Lime</option>
+          <option value="yellow">Yellow</option>
+          <option value="orange">Orange</option>
+        </select>
+      </span>
+      <span class="theme">
+        <button onclick="switchTheme()" id="theme">Light</button>
+      </span>
+      <span class="mode">
+        <button onclick="switchMode()" id="mode">Zen</button>
+      </span>
+      <button class="clear" onclick="clearSmokers()">Clear</button>
+    </span>
+    <span class="digit-tool">
+      <span class="digits">
+        <span class="digit-span">
+          <div class="digit-inner">
+            <button onclick="onClickDigitChange('-', 'mean')">❮</button>
+            <span class="digit" id='mean'>4</span>
+            <button onclick="onClickDigitChange('+', 'mean')">❯</button>
+          </div>
+          <div class="digit-name">Amount</div>
+        </span>
+        <span class="digit-span">
+          <div class="digit-inner">
+            <button onclick="onClickDigitChange('-', 'dev')">❮</button>
+            <span class="digit" id='dev'>1</span>
+            <button onclick="onClickDigitChange('+', 'dev')">❯</button>
+          </div>
+          <div class="digit-name">Std-Dev</div>
+        </span>
+        <span class="digit-span">
+          <div class="digit-inner">
+            <button onclick="onClickDigitChange('-', 'speed')">❮</button>
+            <span class="digit" id='speed'>5</span>
+            <button onclick="onClickDigitChange('+', 'speed')">❯</button>
+          </div>
+          <div class="digit-name">Speed</div>
+        </span>
+        <span class="digit-span">
+          <div class="digit-inner">
+            <button onclick="onClickDigitChange('-', 'rise')">❮</button>
+            <span class="digit" id='rise'>16</span>
+            <button onclick="onClickDigitChange('+', 'rise')">❯</button>
+          </div>
+          <div class="digit-name">Float</div>
+        </span>
+      </span>
+      <button onclick="resetState()">↺</button>
+    </span>
+  </div>
+</body>
+
+</html>
